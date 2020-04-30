@@ -59,6 +59,7 @@ footer span {
 }
 
 .ansi {
+  width: 337px;
   font-family: "IBM Plex Mono";
   line-height: 13.5px;
 }
