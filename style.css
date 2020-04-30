@@ -35,6 +35,11 @@ p br {
   line-height: 1.6;
 }
 
+p span {
+  display: block;
+  height: 10px;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -48,14 +53,14 @@ li {
 
 footer {
   margin-top: 60px;
-  margin: 60px 20px;
+  margin: 60px 20px 20px;
   width: 336px;
 }
 
 footer span {
   line-height: 1.7;
-  margin-bottom: 40px;
   display: block;
+  margin-top: 50px;
 }
 
 .ansi {
