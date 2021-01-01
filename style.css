@@ -1,43 +1,47 @@
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   color: #000;
-  font-family: 'Inter var experimental', 'Noto Sans JP', 'PingFang HK', 'Helvetica Neue', Arial, sans-serif;
-font-size: 14px;
+  font-family: "Inter var experimental", "Noto Sans JP", "PingFang HK",
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 13.5px;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-margin: 60px 20px;
-width: 336px;
+  margin: 60px 20px;
+  width: 336px;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   color: #000;
 }
 
-
 h1 {
-   font-size: 14px;
-   font-weight: normal;
-   margin: 0 0 40px;
-   line-height: 1.7;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 40px;
+  line-height: 1.7;
 }
 
 p {
-  line-height: 1.7;
-  margin: 40px 0;
+  line-height: 1.6;
+  margin: 4px 0;
+  letter-spacing: -0.1px;
 }
 
 p br {
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 p span {
   display: block;
-  height: 10px;
+  height: 5px;
 }
 
 ul {
@@ -47,8 +51,9 @@ ul {
 
 li {
   display: block;
-  line-height: 1.7;
-  margin-bottom: 10px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-size: 12px;
 }
 
 footer {
