@@ -13,9 +13,9 @@ body {
 .responsive-img {
   width: 68vw;        /* 瀏覽器寬度的 60% */
   min-width: 338px;   /* 保證不小於 body 的寬度 */
-  max-width: 100vw;   /* 不超過視窗寬度 */
+  /* max-width: 100vw;   不超過視窗寬度 */
   display: block;
-  margin: 0 auto;     /* 讓圖片在視窗中居中 */
+  /* margin: 0 auto;     讓圖片在視窗中居中 */
 }
 
 main {
@@ -25,10 +25,13 @@ main {
 
 a,
 a:visited {
-  color: #4b8bd0;
+  color: #146274;
 }
 a:active {
   color: #000000;
+}
+a {
+  color: #2e7e5a;
 }
 
 h1 {
