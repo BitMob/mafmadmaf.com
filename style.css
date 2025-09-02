@@ -24,12 +24,12 @@ main {
 }
 
 a,
-a:visited {
+/* a:visited {
   color: #ae0149;
 }
 a:active {
   color: #000000;
-}
+} */
 a {
   color: #000000;
 }
