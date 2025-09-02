@@ -24,14 +24,14 @@ main {
 }
 
 a,
-a:visited {
-  color: #146274;
-}
+/* a:visited {
+  color: #b10707;
+} */
 a:active {
-  color: #000000;
+  color: #ffe600;
 }
 a {
-  color: #2e7e5a;
+  color: #e10800;
 }
 
 h1 {
