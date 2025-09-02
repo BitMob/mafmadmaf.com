@@ -5,7 +5,7 @@ body {
   color: #000;
   font-family: "Inter", "Noto Sans JP", "PingFang HK",
     "Helvetica Neue", Arial, sans-serif;
-  font-size: 15px;  /* 原本 13.5 */
+  font-size: 14px;  /* 原本 13.5 */
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ h1 {
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 4px 0;
   letter-spacing: -0.1px;
 }
