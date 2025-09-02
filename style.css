@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   color: #000;
-  font-family: "Inter", "Noto Sans JP", "PingFang HK",
+  font-family: "Chiron GoRound TC", "Inter", "Noto Sans JP", "PingFang HK",
     "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;  /* 原本 13.5 */
 
@@ -42,13 +42,13 @@ h1 {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 4px 0;
   letter-spacing: -0.1px;
 }
 
 p br {
-  line-height: 1.6;
+  line-height: 1.7px;
 }
 
 p span {
@@ -67,9 +67,9 @@ ul {
 
 li {
   display: block;
-  line-height: 1.5;
-  margin-bottom: 4px;
-  padding-left: 12px;
+  line-height: 1.75;
+  margin-bottom: 6px;
+  padding-left: 18px;
   font-size: 14px;
 }
 
@@ -89,4 +89,8 @@ footer span {
   width: 337px;
   font-family: "IBM Plex Mono";
   line-height: 13.5px;
+}
+
+img {
+  margin-bottom: 8px; /* 你需要的距離，比如20px */
 }
