@@ -24,7 +24,9 @@ main {
 }
 
 a,
-a:visited,
+a:visited {
+  color: #4b8bd0;
+}
 a:active {
   color: #000000;
 }
@@ -39,7 +41,7 @@ h1 {
 p {
   line-height: 1.5;
   margin: 4px 0;
-  letter-spacing: -0.1px;
+  /* letter-spacing: -0.1px; */
 }
 
 p br {
@@ -62,9 +64,10 @@ ul {
 
 li {
   display: block;
-  line-height: 1.2;
-  margin-bottom: 8px;
-  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  padding-left: 12px;
+  font-size: 14px;
 }
 
 footer {
