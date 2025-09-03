@@ -10,12 +10,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.responsive-img {
-  width: 68vw;        /* 瀏覽器寬度的 60% */
+.responsive-img-h {
+  width: 64vw;        /* 瀏覽器寬度的 60% */
   min-width: 338px;   /* 保證不小於 body 的寬度 */
   /* max-width: 100vw;   不超過視窗寬度 */
   display: block;
-  /* margin: 0 auto;     讓圖片在視窗中居中 */
+  margin: 10px 0 30px 0;
+}
+
+.responsive-img-v {
+  width: 44vw;        /* 瀏覽器寬度的 60% */
+  min-width: 338px;   /* 保證不小於 body 的寬度 */
+  /* max-width: 100vw;   不超過視窗寬度 */
+  display: block;
+  margin: 10px 0 30px 0;
+}
+
+.works-title {
+  color: #b8b6ab;
+  /* font-size: 12px; */
+  font-weight: 400;
+  line-height: 1.3;       /* 行距 */
+  display: inline-block;   /* 讓 margin-bottom 生效 */
+  margin: 10px 0 30px 29px;    /* 下邊距 */
+  /* font-style: italic;      斜體 */
+  letter-spacing: -0.15px;
 }
 
 main {
