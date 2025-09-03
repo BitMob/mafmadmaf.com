@@ -46,14 +46,15 @@ a,
 /* (a:visited {
   color: #ae0149;
 } */
-a:hover{
-  color: crimson;
-}
 a:active {
   color: crimson;
 }
+a:hover{
+  color: #000000;
+  background-color: rgb(243, 255, 156);
+}
 a {
-  color: #2a2ca4;
+  color:#000000;
 }
 
 h1 {
