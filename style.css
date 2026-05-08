@@ -79,6 +79,12 @@ p span {
   height: 5px;
 }
 
+p span.years-counter {
+  display: inline;
+  height: auto;
+  font-variant-numeric: tabular-nums;
+}
+
 p section {
   color: grey;
 }

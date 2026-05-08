@@ -48,7 +48,7 @@
         越後妻有大地藝術祭 CHINAHOUSE (Japan, 2024, 2020), 
         藝術在浮梁 (China, 2022, 2021)
         <span></span>
-        與此同時，他以 <a href="https://maf-works.com/" target="_blank">maf-works.com</a> 為名從事專業平面設計長達 15 年，並成立出版工作室 <a href="https://jyugam.com/" target="_blank">Jyugam</a>。
+        與此同時，他以 <a href="https://maf-works.com/" target="_blank">maf-works.com</a> 為名從事專業平面設計長達 <span class="years-counter" data-years-counter>15.00000000</span> 年，並成立出版工作室 <a href="https://jyugam.com/" target="_blank">Jyugam</a>。
         
         <span></span><span></span><span></span><span></span>
 
@@ -62,7 +62,7 @@
         Echigo-Tsumari Art Triennale-CHINAHOUSE Project (Japan, 2024, 2020), 
         Art at Fuliang (China, 2022, 2021)
         <span></span>
-        In parallel, he works as an adept graphic designer for 15 years, under the name <a href="https://maf-works.com/" target="_blank">maf-works.com</a>, and runs a publishing studio <a href="https://jyugam.com/" target="_blank">Jyugam</a> since 2020.
+        In parallel, he works as an adept graphic designer for <span class="years-counter" data-years-counter>15.00000000</span> years, under the name <a href="https://maf-works.com/" target="_blank">maf-works.com</a>, and runs a publishing studio <a href="https://jyugam.com/" target="_blank">Jyugam</a> since 2020.
 
         <span></span><span></span><span></span><span></span><span></span><span></span>
       </p>
@@ -116,6 +116,25 @@ href="https://www.xiaohongshu.com/user/profile/6177a20b0000000002023d78" style="
         </font>
     <span>©1987-2025 mafmadmaf All rights reserved.</span>
   </footer>
+  <script>
+    (function () {
+      var startTime = Date.UTC(2009, 2, 1, 2, 0, 0);
+      var averageYear = 365.2425 * 24 * 60 * 60 * 1000;
+      var counters = document.querySelectorAll("[data-years-counter]");
+
+      function updateYears() {
+        var years = (Date.now() - startTime) / averageYear;
+        var displayYears = years.toFixed(8);
+
+        counters.forEach(function (counter) {
+          counter.textContent = displayYears;
+        });
+      }
+
+      updateYears();
+      window.setInterval(updateYears, 100);
+    }());
+  </script>
 </body>
 
 </html>
