@@ -1,6 +1,21 @@
-# for root
-/work-departmentofsonicflow        /work-DepartmentOfSonicFlow.html     200
-/*              /index.html     200
-​
-# for the rest
-/hehehe/*        /hehehe.html     200
+# pages
+/activities                  /activities.html                  200
+/discography                 /discography.html                 200
+
+# works
+/work-agoldendoorway         /work-AGoldenDoorway.html         200
+/work-arenewedbeginning      /work-ARenewedBeginning.html      200
+/work-aneyeforaneye          /work-AnEyeForAnEye.html          200
+/work-atliangtis             /work-Atliangtis.html             200
+/work-daylight               /work-Daylight.html               200
+/work-departmentofsonicflow  /work-DepartmentOfSonicFlow.html  200
+/work-portal                 /work-Portal.html                 200
+/work-restitutionoftide      /work-RestitutionOfTide.html      200
+/work-scriptonthefly         /work-ScriptontheFly.html         200
+/work-sinkinghorizon         /work-SinkingHorizon.html         200
+/work-soundofthesouth        /work-SoundOfTheSouth.html        200
+/work-theotheri              /work-TheOtherI.html              200
+/work-theotherii             /work-TheOtherII.html             200
+
+# fallback
+/*                           /index.html                       200
