@@ -43,7 +43,6 @@
 
     <p style="text-align: center;">
         瀨戶內國際藝術祭 · 2025</br>
-        第 35 屆澳門藝術節 · 2025</br>
         廣東南海大地藝術節 · 2024, 2022</br>
         越後妻有大地藝術祭 CHINAHOUSE · 2024, 2020</br>
         藝術在浮梁 · 2022, 2021
@@ -54,6 +53,8 @@
     <p style="text-align: center; color:#b8b6ab;">
         蕴生之匣 @GalleryOM · 2025</br>
         噪音語法:日常聲音採樣 @Ramp 北京 · 2025</br>
+        蛇口戲劇節 @深圳 · 2025</br>
+        第 35 屆澳門藝術節 · 2025</br>
         聲城之景 @坪山美術館 · 2025</br>
         飛紙仔 @廣州畫廊 · 2024</br>
         遊牧在南方:河流、隧道、濕熱、星群 @坪山美術館 · 2023</br>
@@ -91,6 +92,7 @@
             Unboxing the Box @GalleryOM · 2025</br>
             The Grammar of Noise: Sampling the Everyday @Ramp · 2025</br>
             Soundscape of the City @Pingshan Art Museum · 2025</br>
+            Shekou Theatre Festival @Shenzhen · 2025</br>
             Script On the Fly @Canton Gallery · 2024</br>
             Nomads in the South: Rivers, Tunnels, Dampness and Constellation @Pingshan Art Museum · 2023</br>
             Sonic Anchor #42 @Contemporary Musiking Hong Kong · 2023</br>
@@ -147,7 +149,6 @@
   <footer>
     <img src="https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-02_131121.jpg" alt="head" style="max-width:100%; height:auto;" />
 
-    <!--<font style="color: crimson;font-weight: 800;">✴︎</font>-->
     <p style="text-align: center;">
     <font style="color:#b8b6ab;letter-spacing: -0.15px;">
        <a href="https://www.youtube.com/channel/UCd3_Sb2nGt26E9VuSqzl-0w/videos" style="color:#b8b6ab;"target="_blank" >YouTube</a>&nbsp;·&nbsp;
@@ -157,8 +158,11 @@
        <a href="https://www.xiaohongshu.com/user/profile/6177a20b0000000002023d78" style="color:#b8b6ab;" target="_blank">Rednote</a><br/>
     </font>
     </p>
+
+    <font style="color: crimson;font-weight: 800;">✴︎</font>
+
     <span>
-        © 1987-2026 mafmadmaf All rights reserved.
+        Copyright 1987-<span id="copyright-year">2026</span> mafmadmaf All rights reserved.
     </span>
 </footer>
 
@@ -181,6 +185,8 @@
 
       updateYears();
       window.setInterval(updateYears, 10);
+
+      document.getElementById("copyright-year").textContent = new Date().getFullYear();
     }());
 
     function toggleProjects(toggleId, listId) {
