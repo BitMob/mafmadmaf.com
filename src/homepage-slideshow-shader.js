@@ -64,7 +64,7 @@ if (frame && imageData) {
       u_colorC: getShaderColorFromString("#7a7a75"),
       u_colorM: getShaderColorFromString("#7a7a75"),
       u_colorY: getShaderColorFromString("#7a7a75"),
-      u_colorK: getShaderColorFromString("#231f20"),
+      u_colorK: getShaderColorFromString("#db143c"),
       u_size: 0.01,
       u_gridNoise: 0.6,
       u_type: HalftoneCmykTypes.dots,
