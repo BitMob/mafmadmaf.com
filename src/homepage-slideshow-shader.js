@@ -51,6 +51,7 @@ if (frame && imageData) {
     let mounts = [];
     let activeLayer = 0;
     let currentIndex = -1;
+    let remainingIndices = [];
     let nextSlidePromise = null;
     let timerId = null;
     let lifecycle = 0;
@@ -134,6 +135,7 @@ if (frame && imageData) {
       resetLayers();
       activeLayer = 0;
       currentIndex = -1;
+      remainingIndices = [];
       nextSlidePromise = null;
       mode = null;
     }
@@ -176,14 +178,70 @@ if (frame && imageData) {
       });
     }
 
-    async function findSlide(startIndex, excludedIndex, token) {
-      for (let checked = 0; checked < imageUrls.length; checked += 1) {
+    function canAvoidAdjacentDuplicates(entries, previousUrl) {
+      const counts = new Map();
+
+      entries.forEach(({ url }) => {
+        counts.set(url, (counts.get(url) || 0) + 1);
+      });
+
+      for (const [url, count] of counts) {
+        const capacity =
+          url === previousUrl
+            ? Math.floor(entries.length / 2)
+            : Math.ceil(entries.length / 2);
+        if (count > capacity) return false;
+      }
+
+      return true;
+    }
+
+    function createRandomOrder(previousUrl) {
+      const pool = imageUrls
+        .map((url, index) => ({ index, url }))
+        .filter(({ url }) => !failedUrls.has(url));
+      const order = [];
+      let lastUrl = previousUrl;
+
+      while (pool.length > 0) {
+        const candidates = [];
+
+        pool.forEach((entry, position) => {
+          if (entry.url === lastUrl) return;
+
+          const remaining = pool.filter((_, index) => index !== position);
+          if (canAvoidAdjacentDuplicates(remaining, entry.url)) {
+            candidates.push(position);
+          }
+        });
+
+        if (candidates.length === 0) {
+          throw new Error("图片列表无法在随机播放时避免相邻重复");
+        }
+
+        const candidatePosition =
+          candidates[Math.floor(Math.random() * candidates.length)];
+        const [entry] = pool.splice(candidatePosition, 1);
+        order.push(entry.index);
+        lastUrl = entry.url;
+      }
+
+      return order;
+    }
+
+    async function findRandomSlide(excludedIndex, token) {
+      while (remainingIndices.length > 0 || failedUrls.size < imageUrls.length) {
         if (!isCurrent(token)) return null;
 
-        const index = (startIndex + checked) % imageUrls.length;
-        const url = imageUrls[index];
+        if (remainingIndices.length === 0) {
+          const previousUrl = excludedIndex < 0 ? null : imageUrls[excludedIndex];
+          remainingIndices = createRandomOrder(previousUrl);
+          if (remainingIndices.length === 0) return null;
+        }
 
-        if (index === excludedIndex || failedUrls.has(url)) continue;
+        const index = remainingIndices.shift();
+        const url = imageUrls[index];
+        if (failedUrls.has(url)) continue;
 
         const image = await loadImage(url, token);
         if (image) return { image, index, url };
@@ -312,7 +370,7 @@ if (frame && imageData) {
     }
 
     function prepareNext(token) {
-      nextSlidePromise = findSlide(currentIndex + 1, currentIndex, token);
+      nextSlidePromise = findRandomSlide(currentIndex, token);
     }
 
     function scheduleNext(token) {
@@ -359,7 +417,7 @@ if (frame && imageData) {
 
       try {
         [firstSlide, noiseTexture] = await Promise.all([
-          findSlide(0, -1, token),
+          findRandomSlide(-1, token),
           loadNoiseTexture(),
         ]);
       } catch (error) {
