@@ -6,5 +6,6 @@ genwan-preview.html
 style-genwan-preview.css
 .codex/memory/
 .codex/templates/
+node_modules/
 test.html
 test.js

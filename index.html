@@ -29,9 +29,75 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap" rel="stylesheet">
+  <style>
+    /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+    .homepage-slideshow {
+      position: fixed;
+      inset: 0 0 0 379px;
+      z-index: 0;
+      overflow: hidden;
+      background: #fff;
+      pointer-events: none;
+    }
+
+    .homepage-slideshow__layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 3s ease-in-out;
+    }
+
+    .homepage-slideshow__layer.is-visible {
+      opacity: 1;
+    }
+
+    .homepage-slideshow__layer canvas,
+    .homepage-slideshow__fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .homepage-slideshow__layer canvas {
+      z-index: 0;
+    }
+
+    .homepage-slideshow__fallback {
+      z-index: 1;
+      display: none;
+      object-fit: cover;
+    }
+
+    .homepage-slideshow.is-fallback .homepage-slideshow__fallback {
+      display: block;
+    }
+
+    body > main,
+    body > footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 1000px) {
+      .homepage-slideshow {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="homepage-slideshow" aria-hidden="true">
+    <div class="homepage-slideshow__layer">
+      <img class="homepage-slideshow__fallback" alt="">
+    </div>
+    <div class="homepage-slideshow__layer">
+      <img class="homepage-slideshow__fallback" alt="">
+    </div>
+  </div>
+
   <main>
     <h1>mafmadmaf</h1>
     <article>
@@ -41,27 +107,27 @@
         作品參與下列項目：
     </p>
 
-    <p style="text-align: center;">
-        瀨戶內國際藝術祭 · 2025</br>
-        廣東南海大地藝術節 · 2024, 2022</br>
-        越後妻有大地藝術祭 CHINAHOUSE · 2024, 2020</br>
-        藝術在浮梁 · 2022, 2021
+    <p style="text-align: left;">
+        ✴︎ 瀨戶內國際藝術祭 · 2025</br>
+        ✴︎ 廣東南海大地藝術節 · 2024, 2022</br>
+        ✴︎ 越後妻有大地藝術祭 CHINAHOUSE · 2024, 2020</br>
+        ✴︎ 藝術在浮梁 · 2022, 2021
     </p>
 
-    <span id="project-toggle" style="cursor:pointer; text-decoration:underline; display:block; text-align:center; color:#b8b6ab;" onclick="toggleProjects('project-toggle', 'project-list')">and more...</span>
+    <span id="project-toggle" style="cursor:pointer; text-decoration:underline; display:block; text-align:left; color:#b8b6ab;" onclick="toggleProjects('project-toggle', 'project-list')">and more...</span>
     <span id="project-list" style="display:none;">
-    <p style="text-align: center; color:#b8b6ab;">
-        蕴生之匣 @GalleryOM · 2025</br>
-        噪音語法:日常聲音採樣 @Ramp 北京 · 2025</br>
-        蛇口戲劇節 @深圳 · 2025</br>
-        第 35 屆澳門藝術節 · 2025</br>
-        聲城之景 @坪山美術館 · 2025</br>
-        飛紙仔 @廣州畫廊 · 2024</br>
-        遊牧在南方:河流、隧道、濕熱、星群 @坪山美術館 · 2023</br>
-        Sonic Anchor #42 @Contemporary Musiking Hong Kong · 2023</br>
-        得閒飲茶:後日常的對話 @廣美美術館 · 2023</br>
-        SXSW Online · 2021</br>
-        東京模組合成器節 @Tokyo Festival of Modular · 2018
+    <p style="text-align: left; color:#b8b6ab;">
+        ✴︎ 蕴生之匣 @GalleryOM · 2025</br>
+        ✴︎ 噪音語法:日常聲音採樣 @Ramp 北京 · 2025</br>
+        ✴︎ 蛇口戲劇節 @深圳 · 2025</br>
+        ✴︎ 第 35 屆澳門藝術節 · 2025</br>
+        ✴︎ 聲城之景 @坪山美術館 · 2025</br>
+        ✴︎ 飛紙仔 @廣州畫廊 · 2024</br>
+        ✴︎ 遊牧在南方:河流、隧道、濕熱、星群 @坪山美術館 · 2023</br>
+        ✴︎ Sonic Anchor #42 @Contemporary Musiking Hong Kong · 2023</br>
+        ✴︎ 得閒飲茶:後日常的對話 @廣美美術館 · 2023</br>
+        ✴︎ SXSW Online · 2021</br>
+        ✴︎ 東京模組合成器節 @Tokyo Festival of Modular · 2018
         <span></span><span></span><span></span>
     </p>
     </span>
@@ -78,27 +144,27 @@
         His works have been presented as part of the following project:
     </p>
 
-    <p style="text-align: center;">
-        Setouchi Triennial · 2025</br>
-        Art Field Nanhai Guangdong · 2024, 2022</br>
-        Echigo-Tsumari Art Triennale CHINAHOUSE · 2024, 2020</br>
-        Art at Fuliang · 2022, 2021
+    <p style="text-align: left;">
+        ✴︎ Setouchi Triennial · 2025</br>
+        ✴︎ Art Field Nanhai Guangdong · 2024, 2022</br>
+        ✴︎ Echigo-Tsumari Art Triennale CHINAHOUSE · 2024, 2020</br>
+        ✴︎ Art at Fuliang · 2022, 2021
     </p>
 
-    <span id="project-toggle-en" style="cursor:pointer; text-decoration:underline; display:block; text-align:center; color:#b8b6ab;" onclick="toggleProjects('project-toggle-en', 'project-list-en')">and more...</span>
+    <span id="project-toggle-en" style="cursor:pointer; text-decoration:underline; display:block; text-align:left; color:#b8b6ab;" onclick="toggleProjects('project-toggle-en', 'project-list-en')">and more...</span>
         <span id="project-list-en" style="display:none;">
-        <p style="text-align: center; color:#b8b6ab;">
-            Unboxing the Box @GalleryOM · 2025</br>
-            The Grammar of Noise: Sampling the Everyday @Ramp · 2025</br>
-            Soundscape of the City @Pingshan Art Museum · 2025</br>
-            35th Macau Arts Festival · 2025</br>
-            Shekou Theatre Festival @Shenzhen · 2025</br>
-            Script On the Fly @Canton Gallery · 2024</br>
-            Nomads in the South: Rivers, Tunnels, Dampness and Constellation @Pingshan Art Museum · 2023</br>
-            Sonic Anchor #42 @Contemporary Musiking Hong Kong · 2023</br>
-            dak haan jam caa @Art Museum Of Guangzhou Academy Of Fine Arts · 2023</br>
-            SXSW Online · 2021</br>
-            Tokyo Festival of Modular · 2018
+        <p style="text-align: left; color:#b8b6ab;">
+            ✴︎ Unboxing the Box @GalleryOM · 2025</br>
+            ✴︎ The Grammar of Noise: Sampling the Everyday @Ramp · 2025</br>
+            ✴︎ Soundscape of the City @Pingshan Art Museum · 2025</br>
+            ✴︎ 35th Macau Arts Festival · 2025</br>
+            ✴︎ Shekou Theatre Festival @Shenzhen · 2025</br>
+            ✴︎ Script On the Fly @Canton Gallery · 2024</br>
+            ✴︎ Nomads in the South: Rivers, Tunnels, Dampness and Constellation @Pingshan Art Museum · 2023</br>
+            ✴︎ Sonic Anchor #42 @Contemporary Musiking Hong Kong · 2023</br>
+            ✴︎ dak haan jam caa @Art Museum Of Guangzhou Academy Of Fine Arts · 2023</br>
+            ✴︎ SXSW Online · 2021</br>
+            ✴︎ Tokyo Festival of Modular · 2018
             <span></span><span></span><span></span>
         </p>
         </span>
@@ -168,6 +234,111 @@
 
   </footer>
 
+  <script id="homepage-slideshow-images" type="application/json">
+  [
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-30_133435.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-30_133542.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-30_133452.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-30_133602.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-30_133556.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125428.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125500.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125509.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125509.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125546.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125557.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125608.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125705.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125716.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125729.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125738.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125823.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125835.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125843.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125854.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125905.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-12-31_125519.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-23_172010.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_180737.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_180411.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_180710.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_180834.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_180845.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_151244.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_153502.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_151308.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_155311.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_155251.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_155401.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-03_155428.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_204232.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144913.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_145314.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144328.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144225.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144437.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144511.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144534.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144610.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144630.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144719.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_144751.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_184752.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_184455.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_205534.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_205810.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_210032.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_210205.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211226.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211054.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211333.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211453.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211528.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211546.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211612.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_211736.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_212702.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_212731.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_185633.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_185651.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_185705.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-09_185717.png",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_181658.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_181720.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_182343.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_182318.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183126.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183140.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_182701.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_182846.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183206.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183608.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183419.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183434.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_183520.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_222556.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_222623.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_222903.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_222829.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_222932.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_223020.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_223158.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_223102.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2026-05-22_223123.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191247.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_190712.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191331.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_190736.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_190749.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_190845.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_190605.jpg",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191006.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191026.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191037.JPG",
+    "https://bitmobcc.oss-cn-shenzhen.aliyuncs.com/maf/uPic/2025-09-06_191049.JPG"
+  ]
+  </script>
+  <script src="assets/homepage-slideshow-shader.js"></script>
   <script>
     (function () {
       var startTime = Date.UTC(2010, 2, 1, 2, 0, 0);
