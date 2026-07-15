@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "build:shader": "esbuild src/homepage-slideshow-shader.js --bundle --format=iife --target=es2020 --minify --legal-comments=inline --outfile=assets/homepage-slideshow-shader.js"
+  },
+  "dependencies": {
+    "@paper-design/shaders": "0.0.77"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}

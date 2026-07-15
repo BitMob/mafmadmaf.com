@@ -6,5 +6,8 @@ genwan-preview.html
 style-genwan-preview.css
 .codex/memory/
 .codex/templates/
+node_modules/
+.playwright-cli/
 test.html
 test.js
+PAPER_SHADER_IMPLEMENTATION_PLAN.md
